@@ -41,15 +41,8 @@ class TableViewController: UITableViewController {
         cell?.textLabel?.textColor = .red
         
         let notificationType = notifications[indexPath.row]
+        presentAlertController(with: notificationType)
         
-        let alert = UIAlertController(title: notificationType,
-                                      message: "After 5 seconds " + notificationType + " will appear",
-                                      preferredStyle: .alert)
-        
-        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
-        
-        alert.addAction(okAction)
-        present(alert, animated: true, completion: nil)
     }
     
     override func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
