@@ -8,9 +8,12 @@
 
 import UIKit
 
-class TableViewController: UITableViewController {
-    
-    let notifications = ["Local Notification",
+
+final class TableViewController: UITableViewController {
+
+    private let appDelegate = UIApplication.shared.delegate as? AppDelegate
+
+    private let notifications = ["Local Notification",
                          "Local Notification with Action",
                          "Local Notification with Content",
                          "Push Notification with  APNs",
@@ -41,7 +44,9 @@ class TableViewController: UITableViewController {
         cell?.textLabel?.textColor = .red
         
         let notificationType = notifications[indexPath.row]
-        presentAlertController(with: notificationType)
+        presentAlertController(with: notificationType) { action in
+            self.appDelegate?.sheduleNotification(notificationType: notificationType)
+        }
         
     }
     

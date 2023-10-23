@@ -9,12 +9,12 @@
 import UIKit
 
 extension TableViewController {
-    func presentAlertController(with notificationType: String) {
+    func presentAlertController(with notificationType: String, completion: ((UIAlertAction) -> Void)? = nil) {
         let alert = UIAlertController(title: notificationType,
                                       message: "After 5 seconds " + notificationType + " will appear",
                                       preferredStyle: .alert)
 
-        let okAction = UIAlertAction(title: "OK", style: .default, handler: nil)
+        let okAction = UIAlertAction(title: "OK", style: .default, handler: completion)
 
         alert.addAction(okAction)
         present(alert, animated: true, completion: nil)
