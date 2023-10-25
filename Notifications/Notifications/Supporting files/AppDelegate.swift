@@ -45,16 +45,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
 
-    func sheduleNotification(notificationType: String) {
+    func scheduleNotification(notificationType: String) {
+
+        let identifier = "Local Notification"
+        let userAction = "User Action"
 
         let content = UNMutableNotificationContent()
         content.title = notificationType
         content.body = "This is example how to create: " + notificationType
         content.sound = UNNotificationSound.default
         content.badge = 1
+        content.categoryIdentifier = userAction
 
         let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5, repeats: false)
-        let identifier = "Local Notification"
 
         let request = UNNotificationRequest(identifier: identifier, content: content, trigger: trigger)
 
@@ -63,6 +66,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("Error: ", error.localizedDescription)
             }
         }
+
+        let snoozeAction = UNNotificationAction(identifier: "Snooze", title: "Snooze")
+        let deleteAction = UNNotificationAction(identifier: "Delete", title: "Delete", options: [.destructive])
+
+        let category = UNNotificationCategory(identifier: userAction, actions: [snoozeAction, deleteAction], intentIdentifiers: [])
+        notificationCenter.setNotificationCategories([category])
+
     }
 }
 
@@ -80,6 +90,21 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         if response.notification.request.identifier == "Local Notification" {
             print("Handling notification with the Local Notification Identifire")
         }
+
+        switch response.actionIdentifier {
+        case UNNotificationDismissActionIdentifier:
+            print("Dissmiss action")
+        case UNNotificationDefaultActionIdentifier:
+            print("Default")
+        case "Snooze":
+            print("Snooze")
+            scheduleNotification(notificationType: "Reminder")
+        case "Delete":
+            print("Delete")
+        default:
+            print("Unknown action")
+        }
+
         completionHandler()
     }
 }

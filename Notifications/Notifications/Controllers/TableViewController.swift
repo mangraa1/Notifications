@@ -45,7 +45,7 @@ final class TableViewController: UITableViewController {
         
         let notificationType = notifications[indexPath.row]
         presentAlertController(with: notificationType) { action in
-            self.appDelegate?.sheduleNotification(notificationType: notificationType)
+            self.appDelegate?.scheduleNotification(notificationType: notificationType)
         }
         
     }
