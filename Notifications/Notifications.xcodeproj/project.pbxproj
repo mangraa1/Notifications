@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		044338DA2AE559E8004C221A /* TableViewController+alertController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 044338D92AE559E8004C221A /* TableViewController+alertController.swift */; };
+		04515BAB2AEB045600F229AF /* Notifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04515BAA2AEB045600F229AF /* Notifications.swift */; };
 		04D711282AE45C3D008B4338 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04D711272AE45C3D008B4338 /* SceneDelegate.swift */; };
 		A8217DE020DBD56300895832 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8217DDF20DBD56300895832 /* AppDelegate.swift */; };
 		A8217DE520DBD56300895832 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A8217DE320DBD56300895832 /* Main.storyboard */; };
@@ -18,6 +19,7 @@
 
 /* Begin PBXFileReference section */
 		044338D92AE559E8004C221A /* TableViewController+alertController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TableViewController+alertController.swift"; sourceTree = "<group>"; };
+		04515BAA2AEB045600F229AF /* Notifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notifications.swift; sourceTree = "<group>"; };
 		04D711272AE45C3D008B4338 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		A8217DDC20DBD56300895832 /* Notifications.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notifications.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8217DDF20DBD56300895832 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -64,6 +66,14 @@
 			path = Extensions;
 			sourceTree = "<group>";
 		};
+		04515BAC2AEB045E00F229AF /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				04515BAA2AEB045600F229AF /* Notifications.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
 		A8217DD320DBD56300895832 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +95,7 @@
 			children = (
 				044338D72AE55980004C221A /* Controllers */,
 				044338D62AE5596A004C221A /* Supporting files */,
+				04515BAC2AEB045E00F229AF /* Helpers */,
 				044338D82AE55996004C221A /* Extensions */,
 				A8217DE320DBD56300895832 /* Main.storyboard */,
 				A8217DE620DBD56400895832 /* Assets.xcassets */,
@@ -121,7 +132,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1000;
-				LastUpgradeCheck = 1000;
+				LastUpgradeCheck = 1420;
 				ORGANIZATIONNAME = Heorhii;
 				TargetAttributes = {
 					A8217DDB20DBD56300895832 = {
@@ -165,6 +176,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				04515BAB2AEB045600F229AF /* Notifications.swift in Sources */,
 				A8217DE020DBD56300895832 /* AppDelegate.swift in Sources */,
 				044338DA2AE559E8004C221A /* TableViewController+alertController.swift in Sources */,
 				A8217DF420DCAF4E00895832 /* TableViewController.swift in Sources */,
@@ -220,6 +232,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -280,6 +293,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
